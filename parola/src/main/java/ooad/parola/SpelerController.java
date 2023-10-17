@@ -5,8 +5,14 @@ import ooad.parola.classes.*;
 
 public class SpelerController {
     public static void main(String[] args) {
+        System.out.println("hello world");
+        
         Scanner input = new Scanner(System.in);
-        Speler speler = new Speler("Martijn", "wachtwoord");
+        System.out.println("vul hier uw gebruikersnaam in: ");
+        String gebruikersnaam = input.nextLine();
+        System.out.println("vul hier uw wachtwoord in: ");
+        String wachtwoord = input.nextLine();
+        Speler speler = new Speler(gebruikersnaam, wachtwoord);
         speler.speelQuiz();
 
         // for (int i = 0; i < 4; i++) {

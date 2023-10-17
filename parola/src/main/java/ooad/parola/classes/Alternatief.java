@@ -1,15 +1,26 @@
 package ooad.parola.classes;
 
-public class Alternatief implements Meerkeuze {
+public class Alternatief {
     private String alternatief;
     private boolean Isjuist;
-
-    public Alternatief(String alternatief, boolean Isjuist) {
+    
+    public Alternatief(String alternatief) {
         this.alternatief = alternatief;
-        this.Isjuist = Isjuist;
     }
 
-    public boolean controleerAntwoord(String antwoord) {
-        return this.alternatief.equals(antwoord);
+    public String getAlternatief() {
+        return alternatief;
+    }
+
+    public void setAlternatief(String alternatief) {
+        this.alternatief = alternatief;
+    }
+
+    public boolean isIsjuist() {
+        return Isjuist;
+    }
+
+    public void setIsjuist(boolean isjuist) {
+        Isjuist = isjuist;
     }
 }

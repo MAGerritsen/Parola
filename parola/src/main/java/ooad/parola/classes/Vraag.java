@@ -9,8 +9,5 @@ public abstract class Vraag {
         this.letter = letter;
     }
 
-    public boolean controleerAntwoord() {
-        return true;
-        //TODO: IMPLEMENTEREN
-    }
+    public abstract boolean controleerAntwoord(Antwoord antwoord);
 }

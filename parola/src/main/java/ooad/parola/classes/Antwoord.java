@@ -2,18 +2,16 @@ package ooad.parola.classes;
 
 public class Antwoord {
     private String antwoord;
-    private boolean juist;
 
-    public Antwoord(String antwoord, boolean juist) {
+    public Antwoord(String antwoord) {
         this.antwoord = antwoord;
-        this.juist = juist;
-    }
-
-    public boolean isJuist() {
-        return juist;
     }
 
     public String getAntwoord() {
         return antwoord;
+    }
+
+    public void setAntwoord(String antwoord) {
+        this.antwoord = antwoord;
     }
 }
