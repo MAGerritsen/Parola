@@ -1,7 +1,9 @@
 package ooad.parola.classes;
 
 public class Quiz {
-    Vraag[] vragen = {
-        // 
+    private Vraag[] vragen;
+
+    public Quiz(Vraag[] vragen) {
+        this.vragen = vragen;
     }
 }

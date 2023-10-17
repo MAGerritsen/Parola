@@ -3,9 +3,10 @@ package ooad.parola.classes;
 public class Alternatief {
     private String alternatief;
     private boolean Isjuist;
-    
-    public Alternatief(String alternatief) {
+
+    public Alternatief(String alternatief, boolean isjuist) {
         this.alternatief = alternatief;
+        Isjuist = isjuist;
     }
 
     public String getAlternatief() {
