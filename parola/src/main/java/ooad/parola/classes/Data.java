@@ -33,7 +33,7 @@ public class Data {
             new Alternatief("Everton", true),
             new Alternatief("Tottenham hotspurs", false)
         };
-        vragen[3] = new Meerkeuze("Welke van de volgende engelse voetbalclubs komt uit Liverpool", 'E', alternatieven2);
+        vragen[3] = new Meerkeuze("Welke van de volgende engelse voetbalclubs komt uit Liverpool", 'E', alternatiefs3);
 
         JuisteKorteAntwoord[] juisteKorteAntwoorden = {
             new JuisteKorteAntwoord("California"),
