@@ -13,6 +13,12 @@ public class SpelerController {
         System.out.println("vul hier uw wachtwoord in: ");
         String wachtwoord = input.nextLine();
         Speler speler = new Speler(gebruikersnaam, wachtwoord);
+        
+        for (int i = 0; i < 7; i++) {
+            speler.speelQuiz();
+
+            speler.geefAntwoord(input.nextLine());
+        }
         speler.speelQuiz();
 
         // for (int i = 0; i < 4; i++) {

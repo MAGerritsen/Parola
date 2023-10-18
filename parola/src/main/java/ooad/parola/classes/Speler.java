@@ -23,21 +23,23 @@ public class Speler {
     }
 
     public void speelQuiz() {
-        System.out.println("Hallo " + this.gebruikersnaam); // test code TODO: remove
+        // System.out.println("Hallo " + this.gebruikersnaam); // test code TODO: remove
 
         // get quiz
         if (huidigeVraag == 0) {
             quiz = new Data().getQuiz();
         } 
-        if (huidigeVraag == quiz.getVragen().length) {
-            // bereken punten
-
-            // sluit
-        }
 
         // toon vraag
         System.out.println(quiz.getVragen()[huidigeVraag]);
         huidigeVraag++;
+
+        if (huidigeVraag == quiz.getVragen().length) {
+            // bereken punten
+            System.out.println("eind");
+
+            // sluit
+        }
     }
 
     public void kopenCredits(int aantal, Speler speler) {
