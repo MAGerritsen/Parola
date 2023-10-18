@@ -10,4 +10,8 @@ public abstract class Vraag {
     }
 
     public abstract boolean controleerAntwoord(Antwoord antwoord);
+
+    public String toString() {
+        return this.vraag;
+    }
 }

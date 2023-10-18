@@ -5,9 +5,11 @@ public class Speler {
 	private String wachtwoord;
 	private int saldo;
 
-    // private Quiz quiz;
-    // private Score score;
-    // private Antwoord antwoord;
+    // dit is voor het spelen van quiz, wanneer een quiz is afgelopen wordt dit allemaal op null gezet
+    private Quiz quiz = null;
+    private int huidigeVraag = 0;
+    private Score score = null;
+    private Antwoord antwoord = null;
 
     public Speler(String gebruikersnaam, String wachtwoord) {
         this.gebruikersnaam = gebruikersnaam;
@@ -15,18 +17,27 @@ public class Speler {
         this.saldo = 1000;
     }
 
-    public String geefAntwoord(String antwoord) {
+    public void geefAntwoord(String antwoord) {
         //geefAntwoord
-        return "";
+        // return "";
     }
 
     public void speelQuiz() {
+        System.out.println("Hallo " + this.gebruikersnaam); // test code TODO: remove
+
         // get quiz
-        System.out.println("Hallo " + this.gebruikersnaam);
+        if (huidigeVraag == 0) {
+            quiz = new Data().getQuiz();
+        } 
+        if (huidigeVraag == quiz.getVragen().length) {
+            // bereken punten
 
-        // speel quiz
+            // sluit
+        }
 
-        // bereken punten
+        // toon vraag
+        System.out.println(quiz.getVragen()[huidigeVraag]);
+        huidigeVraag++;
     }
 
     public void kopenCredits(int aantal, Speler speler) {

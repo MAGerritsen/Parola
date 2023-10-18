@@ -19,6 +19,4 @@ public class KortAntwoord extends Vraag {
         }
         return false;
     }
-
-    // public boolean controleerAntwoord(String antwoord);
 }

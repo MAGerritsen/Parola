@@ -20,4 +20,16 @@ public class Meerkeuze extends Vraag {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        String toString = super.toString();
+
+        for (Alternatief alternatief : alternatieven) {
+            toString = toString + "\n" + alternatief.getAlternatief();
+        }
+        return toString;
+    }
+
+    
 }
