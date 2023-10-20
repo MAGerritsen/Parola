@@ -14,8 +14,7 @@ public class Score {
 
     }
 
-    public int berekenScore() {
-        PuntentellingAdapter puntentelling = new SimpeleBerekening();
+    public int berekenScore(PuntentellingAdapter puntentelling) {
         return puntentelling.berekenScore(woord, juisteAntwoorden, tijd);
     }
 }
