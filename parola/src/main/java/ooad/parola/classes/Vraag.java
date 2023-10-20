@@ -14,4 +14,12 @@ public abstract class Vraag {
     public String toString() {
         return this.vraag;
     }
+
+    public String getVraag() {
+        return vraag;
+    }
+
+    public char getLetter() {
+        return letter;
+    }
 }

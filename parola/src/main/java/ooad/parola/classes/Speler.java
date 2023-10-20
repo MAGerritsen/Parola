@@ -1,5 +1,7 @@
 package ooad.parola.classes;
 
+import java.util.ArrayList;
+
 public class Speler {
 	private String gebruikersnaam;
 	private String wachtwoord;
@@ -9,7 +11,8 @@ public class Speler {
     private Quiz quiz = null;
     private int huidigeVraag = 0;
     private Score score = null;
-    private Antwoord antwoord = null;
+    private int juisteAntwoorden = 0;
+    private char[] letters = new char[8];
 
     public Speler(String gebruikersnaam, String wachtwoord) {
         this.gebruikersnaam = gebruikersnaam;
@@ -18,16 +21,23 @@ public class Speler {
     }
 
     public void geefAntwoord(String antwoord) {
-        //geefAntwoord
+        Antwoord gegevenAntwoord = new Antwoord(antwoord);
+        System.out.println(antwoord);
+        if (quiz.getVragen()[huidigeVraag - 1].controleerAntwoord(gegevenAntwoord)) {
+            letters[juisteAntwoorden] = quiz.getVragen()[huidigeVraag - 1].getLetter();
+            juisteAntwoorden++;
+            System.out.println(juisteAntwoorden);
+        }
         // return "";
     }
 
     public void speelQuiz() {
-        // System.out.println("Hallo " + this.gebruikersnaam); // test code TODO: remove
+        System.out.println(huidigeVraag); // test code TODO: remove
 
         // get quiz
         if (huidigeVraag == 0) {
             quiz = new Data().getQuiz();
+            score = new Score(wachtwoord, saldo, huidigeVraag);
         } 
 
         // toon vraag
@@ -37,6 +47,10 @@ public class Speler {
         if (huidigeVraag == quiz.getVragen().length) {
             // bereken punten
             System.out.println("eind");
+
+            for (int i = 0; i < juisteAntwoorden; i++) {
+                System.out.print(letters[i]);
+            }
 
             // sluit
         }
