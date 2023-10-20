@@ -14,12 +14,14 @@ public class SpelerController {
         String wachtwoord = input.nextLine();
         Speler speler = new Speler(gebruikersnaam, wachtwoord);
         
-        for (int i = 0; i < 7; i++) {
+        speler.speelQuiz();
+
+        for (int i = 0; i < 9; i++) {
             speler.speelQuiz();
 
             speler.geefAntwoord(input.nextLine());
         }
-        speler.speelQuiz();
+        // speler.speelQuiz();
 
         // for (int i = 0; i < 4; i++) {
         //     System.out.println(speler.getVraag(i));

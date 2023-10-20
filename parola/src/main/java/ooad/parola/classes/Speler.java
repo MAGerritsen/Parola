@@ -9,7 +9,7 @@ public class Speler {
 
     // dit is voor het spelen van quiz, wanneer een quiz is afgelopen wordt dit allemaal op null gezet
     private Quiz quiz = null;
-    private int huidigeVraag = 0;
+    private int huidigeVraag = -1;
     private Score score = null;
     private int juisteAntwoorden = 0;
     private char[] letters = new char[8];
@@ -21,38 +21,45 @@ public class Speler {
     }
 
     public void geefAntwoord(String antwoord) {
+        if (huidigeVraag <= quiz.getVragen().length){
         Antwoord gegevenAntwoord = new Antwoord(antwoord);
-        System.out.println(antwoord);
+        // System.out.println(antwoord);
         if (quiz.getVragen()[huidigeVraag - 1].controleerAntwoord(gegevenAntwoord)) {
             letters[juisteAntwoorden] = quiz.getVragen()[huidigeVraag - 1].getLetter();
+            // System.out.println(letters[juisteAntwoorden]);
             juisteAntwoorden++;
-            System.out.println(juisteAntwoorden);
+        }
+        } else {
+            score = new Score(antwoord, juisteAntwoorden, 100 /* dit is een magic number, heb geen zin een timer te implementeren */);
         }
         // return "";
     }
 
     public void speelQuiz() {
-        System.out.println(huidigeVraag); // test code TODO: remove
+        System.out.println("spelen quiz"); // test code TODO: remove
 
         // get quiz
-        if (huidigeVraag == 0) {
+        if (huidigeVraag == -1) {
             quiz = new Data().getQuiz();
             score = new Score(wachtwoord, saldo, huidigeVraag);
-        } 
-
-        // toon vraag
-        System.out.println(quiz.getVragen()[huidigeVraag]);
-        huidigeVraag++;
-
-        if (huidigeVraag == quiz.getVragen().length) {
+            huidigeVraag++;
+        } else if (huidigeVraag == quiz.getVragen().length) {
             // bereken punten
-            System.out.println("eind");
+            System.out.println("Maak een woord met de volgende letters: ");
 
             for (int i = 0; i < juisteAntwoorden; i++) {
-                System.out.print(letters[i]);
+                System.out.print(" - " + letters[i]);
             }
 
+            System.out.println();
+
             // sluit
+        } else {
+            System.out.println(huidigeVraag + " / " + quiz.getVragen().length);
+
+        // toon vraag
+            System.out.println(quiz.getVragen()[huidigeVraag]);
+            huidigeVraag++;
         }
     }
 
