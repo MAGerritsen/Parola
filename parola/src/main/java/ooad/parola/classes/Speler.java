@@ -31,7 +31,7 @@ public class Speler {
             }
         } else {
             score = new Score(antwoord, juisteAntwoorden, 100 /* dit is een magic number, heb geen zin een timer te implementeren */);
-            System.out.println("je score is: " + score.berekenScore(new SimpeleBerekening()));
+            System.out.println("je score is: " + score.berekenScore());
         }
         // return "";
     }
