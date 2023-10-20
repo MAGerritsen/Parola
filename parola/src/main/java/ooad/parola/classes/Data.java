@@ -42,7 +42,7 @@ public class Data {
         vragen[4] = new KortAntwoord("In welke staat van de VS ligt de stad Los Angeles", 'C', juisteKorteAntwoorden);
 
         JuisteKorteAntwoord[] juisteKorteAntwoorden1 = {
-            new JuisteKorteAntwoord("Eminemn"),
+            new JuisteKorteAntwoord("Eminem"),
             new JuisteKorteAntwoord("slim shady")
         };
         vragen[5] = new KortAntwoord("Wat is de artiestennaam van de rapper Marshall Bruce Mathers |||", 'E', juisteKorteAntwoorden1);

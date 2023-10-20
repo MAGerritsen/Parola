@@ -11,9 +11,11 @@ public class Score {
         this.juisteAntwoorden = juisteAntwoorden;
         this.tijd = tijd;
         this.score = score;
+
     }
 
-    public int berekenScore(PuntentellingAdapter puntentelling) {
+    public int berekenScore() {
+        PuntentellingAdapter puntentelling = new SimpeleBerekening();
         return puntentelling.berekenScore(woord, juisteAntwoorden, tijd);
     }
 }

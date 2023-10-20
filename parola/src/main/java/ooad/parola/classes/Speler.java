@@ -21,22 +21,23 @@ public class Speler {
     }
 
     public void geefAntwoord(String antwoord) {
-        if (huidigeVraag <= quiz.getVragen().length){
+        if (huidigeVraag < quiz.getVragen().length){
         Antwoord gegevenAntwoord = new Antwoord(antwoord);
         // System.out.println(antwoord);
-        if (quiz.getVragen()[huidigeVraag - 1].controleerAntwoord(gegevenAntwoord)) {
-            letters[juisteAntwoorden] = quiz.getVragen()[huidigeVraag - 1].getLetter();
-            // System.out.println(letters[juisteAntwoorden]);
-            juisteAntwoorden++;
-        }
+            if (quiz.getVragen()[huidigeVraag - 1].controleerAntwoord(gegevenAntwoord)) {
+                letters[juisteAntwoorden] = quiz.getVragen()[huidigeVraag - 1].getLetter();
+                // System.out.println(letters[juisteAntwoorden]);
+                juisteAntwoorden++;
+            }
         } else {
             score = new Score(antwoord, juisteAntwoorden, 100 /* dit is een magic number, heb geen zin een timer te implementeren */);
+            System.out.println("je score is: " + score.berekenScore());
         }
         // return "";
     }
 
     public void speelQuiz() {
-        System.out.println("spelen quiz"); // test code TODO: remove
+        // System.out.println("spelen quiz"); // test code TODO: remove
 
         // get quiz
         if (huidigeVraag == -1) {
@@ -55,7 +56,7 @@ public class Speler {
 
             // sluit
         } else {
-            System.out.println(huidigeVraag + " / " + quiz.getVragen().length);
+            // System.out.println(huidigeVraag + " / " + quiz.getVragen().length);
 
         // toon vraag
             System.out.println(quiz.getVragen()[huidigeVraag]);
