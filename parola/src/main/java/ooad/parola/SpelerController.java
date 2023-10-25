@@ -4,30 +4,37 @@ import java.util.Scanner;
 import ooad.parola.classes.*;
 
 public class SpelerController {
+
+    public static Scanner input = new Scanner(System.in);
+        
     public static void main(String[] args) {
         System.out.println("hello world");
+
+        // Scanner input = new Scanner(System.in);
         
-        Scanner input = new Scanner(System.in);
         System.out.println("vul hier uw gebruikersnaam in: ");
         String gebruikersnaam = input.nextLine();
         System.out.println("vul hier uw wachtwoord in: ");
         String wachtwoord = input.nextLine();
         Speler speler = new Speler(gebruikersnaam, wachtwoord);
         
+        speelQuiz(speler);
+
+    }
+
+    public static void speelQuiz(Speler speler) {
         speler.speelQuiz();
 
         for (int i = 0; i < 9; i++) {
             speler.speelQuiz();
 
-            speler.geefAntwoord(input.nextLine());
+            geefAntwoord(speler);
         }
-        // speler.speelQuiz();
+    }
 
-        // for (int i = 0; i < 4; i++) {
-        //     System.out.println(speler.getVraag(i));
-        //     speler.beantwoordVraag(i, input.nextLine());
-        // }
+    public static void geefAntwoord(Speler speler) {
+        // Scanner input = new Scanner(System.in);
 
-        // System.out.println("Je hebt " + speler.getPunten() + " punten behaald.");
+        speler.geefAntwoord(input.nextLine());
     }
 }
