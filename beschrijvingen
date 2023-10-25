@@ -1,8 +1,0 @@
-Registreren:
-Om te registreren geeft de gebruiker eerst een gebruikersnaam en wachtwoord mee aan de SpelerController (controller). De SpelerController registreert de nieuwe speler en maakt een nieuwe Speler aan met de gegevens die door de gebruiker zijn meegegeven.
-
-Speler Quiz:
-De gebruiker geeft bij de SpelerController (controller) aan een quiz te willen spelen, hiervoor geeft zij ook haar Speler (speler) mee. De SpelerController laat speler hierop een quiz genereren om te kunnen spelen. De quiz wordt gespeeld in een loop, controller laat speler de volgende vraag printen, speler haalt de vragen op bij de quiz en print de toString van de volgende vraag.
-
-Kopen Credits:
-De gebruiker geeft bij SpelerController (controller) aan extra munten te willen kopen, hij geeft het aantal en zijn gebruikersnaam hiervoor mee. De SpelerController haalt de betreffende Speler (speler) er dan bij om de credits te kunnen kopen. speler gaat dan naar de shop om de credits te kopen, de shop geeft een bedrag terug dat moet worden afgerekend, speler gaat met dit bedrag naar de BetaalService om dit af te handelen, wanneer dit is gelukt verhoogt speler zelf zijn saldo
