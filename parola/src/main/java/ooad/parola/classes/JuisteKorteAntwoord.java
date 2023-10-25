@@ -1,13 +1,13 @@
 package ooad.parola.classes;
 
 public class JuisteKorteAntwoord {
-    private String antwoord;
+    private String kortAntwoord;
 
-    public JuisteKorteAntwoord(String antwoord) {
-        this.antwoord = antwoord;
+    public JuisteKorteAntwoord(String kortAntwoord) {
+        this.kortAntwoord = kortAtnwoord
     }
 
     public String getAntwoord() {
-        return antwoord;
+        return kortAntwoord;
     }
 }
