@@ -4,7 +4,7 @@ public class JuisteKorteAntwoord {
     private String kortAntwoord;
 
     public JuisteKorteAntwoord(String kortAntwoord) {
-        this.kortAntwoord = kortAtnwoord;
+        this.kortAntwoord = kortAntwoord;
     }
 
     public String getAntwoord() {
